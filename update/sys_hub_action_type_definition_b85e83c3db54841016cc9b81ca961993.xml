@@ -13,7 +13,7 @@
         <ih_action>true</ih_action>
         <internal_name>create_project</internal_name>
         <label_cache>[{"name":"{{action.name}}","label":"action➛Name","type":"action","ref":""},{"name":"{{action.namespace_id}}","label":"action➛Namespace ID","type":"action","ref":""},{"name":"{{action.description}}","label":"action➛Description","type":"action","ref":""},{"name":"{{action.visibility}}","label":"action➛Visibility","type":"action","ref":""},{"name":"{{step[741733c6-a804-47b0-b7ce-fcb6ef268d62].u_version}}","label":"step➛REST step➛Version","type":"step","ref":""},{"name":"{{step[420abbaf-87cc-468f-8275-70b39803467e].request_body}}","label":"step➛Pre Processing➛Request Body","type":"step","ref":""},{"name":"{{step[741733c6-a804-47b0-b7ce-fcb6ef268d62].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":""},{"name":"{{step[741733c6-a804-47b0-b7ce-fcb6ef268d62].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":""},{"name":"{{step[741733c6-a804-47b0-b7ce-fcb6ef268d62].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].error_message}}","label":"step➛Post Processing➛Error Message","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].status}}","label":"step➛Post Processing➛Status","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].project_id}}","label":"step➛Post Processing➛Project ID","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].web_url}}","label":"step➛Post Processing➛Web URL","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].ssh_url}}","label":"step➛Post Processing➛SSH URL","type":"step","ref":""},{"name":"{{step[b777ba59-8aba-4b46-9499-0ae71de2c952].http_url}}","label":"step➛Post Processing➛HTTP URL","type":"step","ref":""}]</label_cache>
-        <latest_snapshot>8273d96fdbd8c41016cc9b81ca96194c</latest_snapshot>
+        <latest_snapshot>d8cec002db68001016cc9b81ca961901</latest_snapshot>
         <master_snapshot>6a731d6fdbd8c41016cc9b81ca96191c</master_snapshot>
         <name>Create Project</name>
         <outputs/>
@@ -25,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b85e83c3db54841016cc9b81ca961993</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Create Project</sys_name>
         <sys_overrides/>
         <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_b85e83c3db54841016cc9b81ca961993</sys_update_name>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:38</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:12</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -1461,10 +1461,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-10 17:26:06</sys_created_on>
         <sys_id>f24573d3db94c41016cc9b81ca961982</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-10 17:26:07</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:38:49</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f24573d3db94c41016cc9b81ca961982"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1475,17 +1475,11 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-10 17:26:07</sys_created_on>
         <sys_id>4f4573d3db94c41016cc9b81ca9619c9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-10 17:26:07</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:38:49</sys_updated_on>
         <value>(function execute(inputs, outputs) {
-  var requestBody = {};
-  for (var property in inputs) {
-    if (!gs.nil(inputs[property])) {
-      requestBody[property] = inputs[property];
-    }
-  }
-  outputs.request_body = JSON.stringify(requestBody);
+  outputs = new x_snc_gitlab.GitLabUtils().copyInputsToRequestBody(inputs, outputs);
 })(inputs, outputs);
 </value>
         <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -4157,10 +4151,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-10 17:26:06</sys_created_on>
         <sys_id>f24573d3db94c41016cc9b81ca961982</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-10 17:26:07</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:38:49</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=f24573d3db94c41016cc9b81ca961982"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -4171,17 +4165,11 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-10 17:26:07</sys_created_on>
         <sys_id>4f4573d3db94c41016cc9b81ca9619c9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-10 17:26:07</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:38:49</sys_updated_on>
         <value>(function execute(inputs, outputs) {
-  var requestBody = {};
-  for (var property in inputs) {
-    if (!gs.nil(inputs[property])) {
-      requestBody[property] = inputs[property];
-    }
-  }
-  outputs.request_body = JSON.stringify(requestBody);
+  outputs = new x_snc_gitlab.GitLabUtils().copyInputsToRequestBody(inputs, outputs);
 })(inputs, outputs);
 </value>
         <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -4976,17 +4964,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Create Project">b85e83c3db54841016cc9b81ca961993</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"b7739d6fdbd8c41016cc9b81ca961922","name":"plan"}}</plan>
-        <snapshot>8273d96fdbd8c41016cc9b81ca96194c</snapshot>
+        <snapshot>d8cec002db68001016cc9b81ca961901</snapshot>
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-11 00:17:41</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b7739d6fdbd8c41016cc9b81ca961922</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:41</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:16</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -5011,15 +4999,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6a731d6fdbd8c41016cc9b81ca96191c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
-        <sys_policy/>
+        <sys_policy>read</sys_policy>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_update_name/>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:36</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:11</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -5115,10 +5103,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-11 00:17:37</sys_created_on>
         <sys_id>26731d6fdbd8c41016cc9b81ca96194f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:37</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:12</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=26731d6fdbd8c41016cc9b81ca96194f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -5129,17 +5117,11 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-11 00:17:37</sys_created_on>
         <sys_id>3a731d6fdbd8c41016cc9b81ca96196f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:37</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:12</sys_updated_on>
         <value>(function execute(inputs, outputs) {
-  var requestBody = {};
-  for (var property in inputs) {
-    if (!gs.nil(inputs[property])) {
-      requestBody[property] = inputs[property];
-    }
-  }
-  outputs.request_body = JSON.stringify(requestBody);
+  outputs = new x_snc_gitlab.GitLabUtils().copyInputsToRequestBody(inputs, outputs);
 })(inputs, outputs);
 </value>
         <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
@@ -7785,10 +7767,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-11 00:17:37</sys_created_on>
         <sys_id>26731d6fdbd8c41016cc9b81ca96194f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:37</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:12</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=26731d6fdbd8c41016cc9b81ca96194f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -7799,17 +7781,11 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-11 00:17:37</sys_created_on>
         <sys_id>3a731d6fdbd8c41016cc9b81ca96196f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-11 00:17:37</sys_updated_on>
+        <sys_updated_on>2019-10-18 13:42:12</sys_updated_on>
         <value>(function execute(inputs, outputs) {
-  var requestBody = {};
-  for (var property in inputs) {
-    if (!gs.nil(inputs[property])) {
-      requestBody[property] = inputs[property];
-    }
-  }
-  outputs.request_body = JSON.stringify(requestBody);
+  outputs = new x_snc_gitlab.GitLabUtils().copyInputsToRequestBody(inputs, outputs);
 })(inputs, outputs);
 </value>
         <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
